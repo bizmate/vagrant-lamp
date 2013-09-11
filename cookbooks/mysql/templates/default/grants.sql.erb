@@ -10,3 +10,4 @@ GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%' identified by '<%= node[:mysql][:se
 
 # Set the server root password. This should be preseeded by the package installation.
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('<%= node[:mysql][:server_root_password] %>');
+#GRANT ALL PRIVILEGES ON *.* TO 'root'@'*' IDENTIFIED BY PASSWORD 'root' WITH GRANT OPTION;

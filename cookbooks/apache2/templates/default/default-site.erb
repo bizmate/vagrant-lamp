@@ -1,12 +1,12 @@
 <VirtualHost *:80>
         ServerAdmin <%= node[:apache][:contact] %>
 
-        DocumentRoot /var/www/
+        DocumentRoot /quadretto/
         <Directory />
                 Options FollowSymLinks
                 AllowOverride None
         </Directory>
-        <Directory /var/www/>
+        <Directory /quadretto/>
                 Options Indexes FollowSymLinks MultiViews
                 AllowOverride None
                 Order allow,deny

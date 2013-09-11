@@ -6,6 +6,10 @@ Vagrant::Config.run do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "lucid32"
   config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+  
+  #network stuff
+  config.vm.network :hostonly, "33.33.33.10"
+  config.vm.share_folder "quadretto", "/quadretto", "/Applications/XAMPP/htdocs/sites/quadretto"
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
@@ -17,6 +21,6 @@ Vagrant::Config.run do |config|
   })
   end
 
-  config.vm.forward_port(80, 8080)
+  #config.vm.forward_port(80, 8080)
   config.vm.forward_port(3306, 3306)
 end
